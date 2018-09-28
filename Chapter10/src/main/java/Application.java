@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @date 2018/9/25
  */
 @SpringBootApplication
-@ComponentScan("com.course.server")
+@ComponentScan("com.course")
 public class Application {
     public static void main(String[] args){
         SpringApplication.run(Application.class,args);
