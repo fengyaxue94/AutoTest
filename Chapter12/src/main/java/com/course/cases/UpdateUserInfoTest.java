@@ -23,40 +23,41 @@ public class UpdateUserInfoTest {
         UpdateUserInfoCase updateUserInfoCase = session.selectOne("updateUserInfoCase", 1);
         System.out.println(updateUserInfoCase.toString());
         System.out.println(TestConfig.updateUserInfoUrl);
+
+        int result = getResult(updateUserInfoCase);
+        /**selectone：查询数据库*/
+        User user = session.selectOne(updateUserInfoCase.getExpected(),updateUserInfoCase);
+        System.out.println(user.toString());
+        /**验证查询出来结果不是空的*/
+        Assert.assertNotNull(user);
+        /**getResult没有获取结果的话，int result就为空*/
+        Assert.assertNotNull(result);
     }
     @Test(dependsOnGroups = "loginTrue",description = "删除用户")
-        public void deleteUser() throws IOException {
+        public void deleteUser() throws IOException, InterruptedException {
         SqlSession session = DatabaseUtil.getSqlSession();
         UpdateUserInfoCase updateUserInfoCase = session.selectOne("updateUserInfoCase", 2);
         System.out.println(updateUserInfoCase.toString());
         System.out.println(TestConfig.updateUserInfoUrl);
-    }
-
-
         /**下边为写完接口的代码*/
-        /**int result = getResult(updateUserInfoCase);*/
+        int result = getResult(updateUserInfoCase);
         /**
          * 下边这两行跟着测试的课讲
          */
         //获取更新后的结果
-        /**Thread.sleep(2000);
+        Thread.sleep(2000);
         User user = session.selectOne(updateUserInfoCase.getExpected(),updateUserInfoCase);
         System.out.println(user.toString());
-
-
-
         Assert.assertNotNull(user);
         Assert.assertNotNull(result);
 
     }
 
-
-
-
-        //下边为写完接口的代码
-        int result = getResult(updateUserInfoCase);
-
-        /**
+    /**
+     * 下边为写完接口的代码
+     * int result = getResult(updateUserInfoCase);
+     */
+    /**
          * 下边这两行跟着测试的课讲
 
         Thread.sleep(2000);
@@ -69,7 +70,7 @@ public class UpdateUserInfoTest {
     }*/
 
 
-    /**private int getResult(UpdateUserInfoCase updateUserInfoCase) throws IOException {
+    private int getResult(UpdateUserInfoCase updateUserInfoCase) throws IOException {
         HttpPost post = new HttpPost(TestConfig.updateUserInfoUrl);
         JSONObject param = new JSONObject();
         param.put("id",updateUserInfoCase.getUserId());
@@ -94,6 +95,6 @@ public class UpdateUserInfoTest {
         System.out.println(result);
         return Integer.parseInt(result);
 
-    }*/
+    }
 
 }

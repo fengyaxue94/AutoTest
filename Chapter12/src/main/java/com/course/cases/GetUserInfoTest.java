@@ -28,15 +28,13 @@ public class GetUserInfoTest {
         GetUserInfoCase getUserInfoCase = session.selectOne("getUserInfoCase", 1);
         System.out.println(getUserInfoCase.toString());
         System.out.println(TestConfig.getUserInfoUrl);
-    }
-
         /**下边为写完接口的代码*/
-        /**JSONArray resultJson = getJsonResult(getUserInfoCase);*/
+        JSONArray resultJson = getJsonResult(getUserInfoCase);
 
         /**
          * 下边三行可以先讲
          */
-        /** Thread.sleep(2000);
+        Thread.sleep(2000);
         User user = session.selectOne(getUserInfoCase.getExpected(),getUserInfoCase);
         System.out.println("自己查库获取用户信息:"+user.toString());
 
@@ -53,24 +51,24 @@ public class GetUserInfoTest {
         HttpPost post = new HttpPost(TestConfig.getUserInfoUrl);
         JSONObject param = new JSONObject();
         param.put("id",getUserInfoCase.getUserId());
-        //设置请求头信息 设置header
+        /**设置请求头信息 设置header*/
         post.setHeader("content-type","application/json");
-        //将参数信息添加到方法中
+        /**将参数信息添加到方法中*/
         StringEntity entity = new StringEntity(param.toString(),"utf-8");
         post.setEntity(entity);
-        //设置cookies
+        /**设置cookies*/
         TestConfig.defaultHttpClient.setCookieStore(TestConfig.store);
-        //声明一个对象来进行响应结果的存储
+        /**声明一个对象来进行响应结果的存储*/
         String result;
-        //执行post方法
+        /**执行post方法*/
         HttpResponse response = TestConfig.defaultHttpClient.execute(post);
-        //获取响应结果
+        /**获取响应结果*/
         result = EntityUtils.toString(response.getEntity(),"utf-8");
         System.out.println("调用接口result:"+result);
+        /**先转换成list，才能转成jsonArray*/
         List resultList = Arrays.asList(result);
         JSONArray array = new JSONArray(resultList);
         System.out.println(array.toString());
         return array;
-
-    }*/
+    }
 }
