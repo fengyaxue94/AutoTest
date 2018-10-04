@@ -11,7 +11,7 @@ spring:
           name: report
    datasource:
        driver-class-name: com.mysql.jdbc.Driver
-       url: jdbc:mysql://30.28.161.217:3306/course
+       url: jdbc:mysql://localhost:3306/course
        username: root
        password: root
 
