@@ -41,9 +41,10 @@ public class GetUserInfoTest {
         List userList = new ArrayList();
         userList.add(user);
         JSONArray jsonArray = new JSONArray(userList);
+        JSONArray jsonArray1 = new JSONArray(resultJson.getString(0));
         System.out.println("获取用户信息:"+jsonArray.toString());
         System.out.println("调用接口获取用户信息:"+resultJson.toString());
-        Assert.assertEquals(jsonArray,resultJson);
+        Assert.assertEquals(jsonArray.toString(),jsonArray1.toString());
     }
 
 

@@ -93,6 +93,7 @@ public class UpdateUserInfoTest {
         //获取响应结果
         result = EntityUtils.toString(response.getEntity(),"utf-8");
         System.out.println(result);
+        /**获取的结果是字符串，转换格式*/
         return Integer.parseInt(result);
 
     }

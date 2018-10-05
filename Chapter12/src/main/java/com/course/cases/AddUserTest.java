@@ -22,7 +22,7 @@ import java.io.IOException;
 public class AddUserTest {
 
     @Test(dependsOnGroups = "loginTrue",description = "添加用户接口测试")
-    public void addUser() throws IOException {
+    public void addUser() throws IOException, InterruptedException {
         SqlSession sqlSession = DatabaseUtil.getSqlSession();
         AddUserCase addUserCase = sqlSession.selectOne("addUserCase",1);
         System.out.println(addUserCase.toString());
@@ -32,6 +32,7 @@ public class AddUserTest {
         String result = getResult(addUserCase);
         /**验证返回结果*/
         /**User表中的数据*/
+        Thread.sleep(3000);
         User user = sqlSession.selectOne("addUser",addUserCase);
         System.out.println(user.toString());
         /**结果判断*/
