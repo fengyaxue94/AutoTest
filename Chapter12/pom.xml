@@ -77,7 +77,6 @@
             <artifactId>extentreports</artifactId>
             <version>3.0.6</version>
         </dependency>
-
     </dependencies>
 
 </project>
