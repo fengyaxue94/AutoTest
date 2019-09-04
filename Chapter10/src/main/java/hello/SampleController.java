@@ -13,6 +13,9 @@ public class SampleController {
     @RequestMapping("/")
     @ResponseBody
     String home() {
+        /**
+         * 修改return返回值
+         */
         return "Hello World! Hello Everyone!";
     }
     public static void main(String[] args) throws Exception {
