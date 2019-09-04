@@ -14,4 +14,19 @@ public class GetUserListCase {
     private String sex;
     /**expected：预期结果*/
     private String expected;
+
+    public String getExpected() {
+        return expected;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+    public String getSex() {
+        return sex;
+    }
+    public String getAge() {
+        return age;
+    }
+
 }

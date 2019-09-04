@@ -1,5 +1,4 @@
 package com.course.controller;
-
 import com.course.model.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -41,7 +40,6 @@ public class UserManager {
         }
         return false;
     }
-
     @ApiOperation(value = "添加用户接口",httpMethod = "post")
     @RequestMapping(value = "/addUser",method = RequestMethod.POST)
     public Boolean addUser(HttpServletRequest request, @RequestBody User user) {
@@ -56,7 +54,10 @@ public class UserManager {
         }
         return false;
     }
-    /**判断cookie*/
+    /**判断cookies信息
+     * cookies为空
+     * cookies验证通过
+     */
     private Boolean verifyCookies(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
         if (Objects.isNull(cookies)) {
@@ -95,6 +96,5 @@ public class UserManager {
         log.info("更新数据的条目数是："+i);
         return i;
     }
-
 
 }

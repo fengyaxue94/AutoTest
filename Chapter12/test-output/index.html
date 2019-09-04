@@ -49,7 +49,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Oct 5, 2018 10:43:33 PM</span>
+                    <span class='label suite-start-time blue darken-3'>May 6, 2019 10:28:33 AM</span>
 				</a>
 			</li>
 			<li>
@@ -74,8 +74,8 @@
 					<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+											<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -137,10 +137,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='85.714%'><span class='strong'>6</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='14.286%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='28.571%'>2</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='71.429%'>5</span> others
 				</div>
 			</div>
 		</div>
@@ -152,10 +152,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='85.714%'><span class='strong'>6</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='14.286%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='28.571%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='71.429%'>5</span> others
 				</div>
 			</div>
 		</div>
@@ -172,16 +172,21 @@
 				
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>addUser</span>
-						<span class='test-time'>Oct 5, 2018 10:43:35 PM</span>
+						<span class='test-name'>loginTrue</span>
+						<span class='test-time'>May 6, 2019 10:28:33 AM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Oct 5, 2018 10:43:35 PM</span>
-	<span class='label end-time'>Oct 5, 2018 10:43:38 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+66ms</span>
+	<span class='label start-time'>May 6, 2019 10:28:33 AM</span>
+	<span class='label end-time'>May 6, 2019 10:28:36 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+625ms</span>
 </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>loginTrue</span>
+			</div>
+	</div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
 			<thead>
@@ -194,19 +199,22 @@
 			<tbody>
 				<tr class='log' status='fail'>
 					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>10:43:45 PM</td>
-					<td class='step-details'><pre>org.apache.ibatis.exceptions.PersistenceException: 
-### Error querying database.  Cause: org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.course.model.addUser'.  It's likely that neither a Result Type nor a Result Map was specified.
+					<td class='timestamp'>10:28:38 AM</td>
+					<td class='step-details'><textarea>org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 1 ms ago.
 ### The error may exist in mapper/SQLMapper.xml
-### The error may involve com.course.model.addUser
-### The error occurred while handling results
-### SQL: select * from user where         userName=?         and password=?         and sex=?         and age=?         and permission=?         and isDelete=?
-### Cause: org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.course.model.addUser'.  It's likely that neither a Result Type nor a Result Map was specified.
+### The error may involve com.course.model.loginCase
+### The error occurred while executing a query
+### Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 1 ms ago.
 	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
-	at com.course.cases.AddUserTest.addUser(AddUserTest.java:36)
+	at com.course.cases.LoginTest.loginTrue(LoginTest.java:43)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -231,19 +239,60 @@
 	at org.testng.TestNG.run(TestNG.java:1104)
 	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
 	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
-Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.course.model.addUser'.  It's likely that neither a Result Type nor a Result Map was specified.
-	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.validateResultMapsCount(DefaultResultSetHandler.java:283)
-	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSets(DefaultResultSetHandler.java:189)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 1 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2103)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:718)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:282)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:201)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:196)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:93)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:385)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
 	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
 	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
 	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
 	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
 	... 27 more
-</pre></td>
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:253)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2026)
+	... 53 more
+</textarea></td>
 				</tr>
 			</tbody>
 		</table>
@@ -252,56 +301,17 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 				</li>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
-					<div class='test-heading'>
-						<span class='test-name'>loginTrue</span>
-						<span class='test-time'>Oct 5, 2018 10:43:33 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Oct 5, 2018 10:43:33 PM</span>
-	<span class='label end-time'>Oct 5, 2018 10:43:35 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+764ms</span>
-</div>
-	<div class='test-attributes'>
-			<div class='category-list'>
-				<span class='category label white-text'>loginTrue</span>
-			</div>
-	</div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:43:45 PM</td>
-					<td class='step-details'>Test passed</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
 					<div class='test-heading'>
 						<span class='test-name'>loginFalse</span>
-						<span class='test-time'>Oct 5, 2018 10:43:35 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>May 6, 2019 10:28:36 AM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Oct 5, 2018 10:43:35 PM</span>
-	<span class='label end-time'>Oct 5, 2018 10:43:35 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+92ms</span>
+	<span class='label start-time'>May 6, 2019 10:28:36 AM</span>
+	<span class='label end-time'>May 6, 2019 10:28:38 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+110ms</span>
 </div>
 	<div class='test-attributes'>
 			<div class='category-list'>
@@ -318,10 +328,102 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 				</tr>
 			</thead>
 			<tbody>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:43:45 PM</td>
-					<td class='step-details'>Test passed</td>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:28:38 AM</td>
+					<td class='step-details'><textarea>org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+### The error may exist in mapper/SQLMapper.xml
+### The error may involve com.course.model.loginCase
+### The error occurred while executing a query
+### Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at com.course.cases.LoginTest.loginFalse(LoginTest.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2103)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:718)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:282)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:201)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:196)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:93)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:385)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	... 27 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:253)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2026)
+	... 53 more
+</textarea></td>
 				</tr>
 			</tbody>
 		</table>
@@ -330,17 +432,17 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 				</li>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='3'>
 					<div class='test-heading'>
-						<span class='test-name'>getUserInfo</span>
-						<span class='test-time'>Oct 5, 2018 10:43:38 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>addUser</span>
+						<span class='test-time'>May 6, 2019 10:28:38 AM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Oct 5, 2018 10:43:38 PM</span>
-	<span class='label end-time'>Oct 5, 2018 10:43:40 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+163ms</span>
+	<span class='label start-time'>May 6, 2019 10:28:38 AM</span>
+	<span class='label end-time'>May 6, 2019 10:28:38 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -352,10 +454,28 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 				</tr>
 			</thead>
 			<tbody>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:43:45 PM</td>
-					<td class='step-details'>Test passed</td>
+				<tr class='log' status='skip'>
+					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+					<td class='timestamp'>10:28:38 AM</td>
+					<td class='step-details'><pre>java.lang.Throwable: Method AddUserTest.addUser()[pri:0, instance:com.course.cases.AddUserTest@4b6995df] depends on not successfully finished methods in group "loginTrue"
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></td>
 				</tr>
 			</tbody>
 		</table>
@@ -364,17 +484,17 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 				</li>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='4'>
 					<div class='test-heading'>
 						<span class='test-name'>updateUserInfo</span>
-						<span class='test-time'>Oct 5, 2018 10:43:40 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>May 6, 2019 10:28:38 AM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Oct 5, 2018 10:43:40 PM</span>
-	<span class='label end-time'>Oct 5, 2018 10:43:40 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+158ms</span>
+	<span class='label start-time'>May 6, 2019 10:28:38 AM</span>
+	<span class='label end-time'>May 6, 2019 10:28:38 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -386,10 +506,28 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 				</tr>
 			</thead>
 			<tbody>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:43:45 PM</td>
-					<td class='step-details'>Test passed</td>
+				<tr class='log' status='skip'>
+					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+					<td class='timestamp'>10:28:38 AM</td>
+					<td class='step-details'><pre>java.lang.Throwable: Method UpdateUserInfoTest.updateUserInfo()[pri:0, instance:com.course.cases.UpdateUserInfoTest@66048bfd] depends on not successfully finished methods in group "loginTrue"
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></td>
 				</tr>
 			</tbody>
 		</table>
@@ -398,51 +536,17 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 				</li>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
-					<div class='test-heading'>
-						<span class='test-name'>deleteUser</span>
-						<span class='test-time'>Oct 5, 2018 10:43:40 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Oct 5, 2018 10:43:40 PM</span>
-	<span class='label end-time'>Oct 5, 2018 10:43:43 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+64ms</span>
-</div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:43:45 PM</td>
-					<td class='step-details'>Test passed</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='5'>
 					<div class='test-heading'>
 						<span class='test-name'>getUserListInfo</span>
-						<span class='test-time'>Oct 5, 2018 10:43:43 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>May 6, 2019 10:28:38 AM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Oct 5, 2018 10:43:43 PM</span>
-	<span class='label end-time'>Oct 5, 2018 10:43:45 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+109ms</span>
+	<span class='label start-time'>May 6, 2019 10:28:38 AM</span>
+	<span class='label end-time'>May 6, 2019 10:28:38 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -454,10 +558,132 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 				</tr>
 			</thead>
 			<tbody>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>10:43:45 PM</td>
-					<td class='step-details'>Test passed</td>
+				<tr class='log' status='skip'>
+					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+					<td class='timestamp'>10:28:38 AM</td>
+					<td class='step-details'><pre>java.lang.Throwable: Method GetUserInfoListTest.getUserListInfo()[pri:0, instance:com.course.cases.GetUserInfoListTest@61443d8f] depends on not successfully finished methods in group "loginTrue"
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>getUserInfo</span>
+						<span class='test-time'>May 6, 2019 10:28:38 AM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 6, 2019 10:28:38 AM</span>
+	<span class='label end-time'>May 6, 2019 10:28:38 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='skip'>
+					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+					<td class='timestamp'>10:28:38 AM</td>
+					<td class='step-details'><pre>java.lang.Throwable: Method GetUserInfoTest.getUserInfo()[pri:0, instance:com.course.cases.GetUserInfoTest@591f989e] depends on not successfully finished methods in group "loginTrue"
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>deleteUser</span>
+						<span class='test-time'>May 6, 2019 10:28:38 AM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>May 6, 2019 10:28:38 AM</span>
+	<span class='label end-time'>May 6, 2019 10:28:38 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='skip'>
+					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+					<td class='timestamp'>10:28:38 AM</td>
+					<td class='step-details'><pre>java.lang.Throwable: Method UpdateUserInfoTest.deleteUser()[pri:0, instance:com.course.cases.UpdateUserInfoTest@66048bfd] depends on not successfully finished methods in group "loginTrue"
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></td>
 				</tr>
 			</tbody>
 		</table>
@@ -518,13 +744,13 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 					<div class='category-heading'>
 						<span class='category-name'>loginTrue</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
+							<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 					
@@ -539,9 +765,9 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 								</thead>
 								<tbody>
 									<tr>
-										<td>Oct 5, 2018 10:43:33 PM</td>
-										<td class='linked' test-id='2'>loginTrue</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td>May 6, 2019 10:28:33 AM</td>
+										<td class='linked' test-id='1'>loginTrue</td>
+										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -552,13 +778,13 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 					<div class='category-heading'>
 						<span class='category-name'>loginFalse</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
+							<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 					
@@ -573,9 +799,9 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 								</thead>
 								<tbody>
 									<tr>
-										<td>Oct 5, 2018 10:43:35 PM</td>
-										<td class='linked' test-id='3'>loginFalse</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td>May 6, 2019 10:28:36 AM</td>
+										<td class='linked' test-id='2'>loginFalse</td>
+										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -622,7 +848,7 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
                         <li class='exception displayed active'>
                             <div class='exception-heading'>
                                 <span class='exception-name'>org.apache.ibatis.exceptions.PersistenceException</span>
-                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>2</span></span>
                             </div>
                             <div class='exception-content hide'>
                                 <div class='exception-tests'>
@@ -636,20 +862,23 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Oct 5, 2018 10:43:35 PM</td>
-                                                        <td class='linked' test-id='1'>addUser</td>
-                                                        <td><pre><pre>org.apache.ibatis.exceptions.PersistenceException: 
-### Error querying database.  Cause: org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.course.model.addUser'.  It's likely that neither a Result Type nor a Result Map was specified.
+                                                        <td>May 6, 2019 10:28:33 AM</td>
+                                                        <td class='linked' test-id='1'>loginTrue</td>
+                                                        <td><pre><textarea>org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 1 ms ago.
 ### The error may exist in mapper/SQLMapper.xml
-### The error may involve com.course.model.addUser
-### The error occurred while handling results
-### SQL: select * from user where         userName=?         and password=?         and sex=?         and age=?         and permission=?         and isDelete=?
-### Cause: org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.course.model.addUser'.  It's likely that neither a Result Type nor a Result Map was specified.
+### The error may involve com.course.model.loginCase
+### The error occurred while executing a query
+### Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 1 ms ago.
 	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
-	at com.course.cases.AddUserTest.addUser(AddUserTest.java:36)
+	at com.course.cases.LoginTest.loginTrue(LoginTest.java:43)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -674,18 +903,292 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 	at org.testng.TestNG.run(TestNG.java:1104)
 	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
 	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
-Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no Result Maps were found for the Mapped Statement 'com.course.model.addUser'.  It's likely that neither a Result Type nor a Result Map was specified.
-	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.validateResultMapsCount(DefaultResultSetHandler.java:283)
-	at org.apache.ibatis.executor.resultset.DefaultResultSetHandler.handleResultSets(DefaultResultSetHandler.java:189)
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:64)
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 1 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2103)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:718)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:282)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:201)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:196)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:93)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:385)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
 	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
 	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
 	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
 	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
 	... 27 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:253)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2026)
+	... 53 more
+</textarea></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>May 6, 2019 10:28:36 AM</td>
+                                                        <td class='linked' test-id='2'>loginFalse</td>
+                                                        <td><pre><textarea>org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+### The error may exist in mapper/SQLMapper.xml
+### The error may involve com.course.model.loginCase
+### The error occurred while executing a query
+### Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at com.course.cases.LoginTest.loginFalse(LoginTest.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 0 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2103)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:718)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:302)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:282)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:201)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:196)
+	at org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:93)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:385)
+	at org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:138)
+	at org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:60)
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	... 27 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:253)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:280)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2026)
+	... 53 more
+</textarea></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>java.lang.Throwable</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>5</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>May 6, 2019 10:28:38 AM</td>
+                                                        <td class='linked' test-id='3'>addUser</td>
+                                                        <td><pre><pre>java.lang.Throwable: Method AddUserTest.addUser()[pri:0, instance:com.course.cases.AddUserTest@4b6995df] depends on not successfully finished methods in group "loginTrue"
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>May 6, 2019 10:28:38 AM</td>
+                                                        <td class='linked' test-id='4'>updateUserInfo</td>
+                                                        <td><pre><pre>java.lang.Throwable: Method UpdateUserInfoTest.updateUserInfo()[pri:0, instance:com.course.cases.UpdateUserInfoTest@66048bfd] depends on not successfully finished methods in group "loginTrue"
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>May 6, 2019 10:28:38 AM</td>
+                                                        <td class='linked' test-id='5'>getUserListInfo</td>
+                                                        <td><pre><pre>java.lang.Throwable: Method GetUserInfoListTest.getUserListInfo()[pri:0, instance:com.course.cases.GetUserInfoListTest@61443d8f] depends on not successfully finished methods in group "loginTrue"
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>May 6, 2019 10:28:38 AM</td>
+                                                        <td class='linked' test-id='6'>getUserInfo</td>
+                                                        <td><pre><pre>java.lang.Throwable: Method GetUserInfoTest.getUserInfo()[pri:0, instance:com.course.cases.GetUserInfoTest@591f989e] depends on not successfully finished methods in group "loginTrue"
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>May 6, 2019 10:28:38 AM</td>
+                                                        <td class='linked' test-id='7'>deleteUser</td>
+                                                        <td><pre><pre>java.lang.Throwable: Method UpdateUserInfoTest.deleteUser()[pri:0, instance:com.course.cases.UpdateUserInfoTest@66048bfd] depends on not successfully finished methods in group "loginTrue"
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
 </pre></pre></td>
                                                     </tr>
                                         </tbody>
@@ -724,19 +1227,19 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Oct 5, 2018 10:43:33 PM</div>
+					<div class='panel-lead'>May 6, 2019 10:28:33 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Oct 5, 2018 10:43:35 PM</div>
+			 		<div class='panel-lead'>May 6, 2019 10:28:36 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>1,764ms</div>
+					<div class='panel-lead'>2,625ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -752,14 +1255,14 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 						</tr>
 						<tr>
 							<td>loginTrue</td>
-							<td>1</td>
 							<td>0</td>
+							<td>1</td>
 							<td>0</td>
 						</tr>
 						<tr>
 							<td>loginFalse</td>
-							<td>1</td>
 							<td>0</td>
+							<td>1</td>
 							<td>0</td>
 						</tr>
 					</table>
@@ -775,22 +1278,22 @@ Caused by: org.apache.ibatis.executor.ExecutorException: A query was run and no 
 
 		<script>
 			var statusGroup = {
-				passParent: 6,
-				failParent: 1,
+				passParent: 0,
+				failParent: 2,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
-				skipParent: 0,
-				exceptionsParent: 1,
+				skipParent: 5,
+				exceptionsParent: 7,
 				
-				passChild: 6,
-				failChild: 1,
+				passChild: 0,
+				failChild: 2,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
-				skipChild: 0,
+				skipChild: 5,
 				infoChild: 0,
-				exceptionsChild: 1,
+				exceptionsChild: 7,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,

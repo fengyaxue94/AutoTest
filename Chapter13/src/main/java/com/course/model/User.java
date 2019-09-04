@@ -8,14 +8,24 @@ import lombok.Data;
  */
 @Data
 public class User {
-    /**定义变量*/
+    /**
+     * 定义变量
+     */
     private int id;
     private String userName;
     private String password;
     private String age;
     private String sex;
-    /**定义变量：权限*/
+    /**
+     * 定义变量：权限
+     */
     private String permission;
-    /**isDelete：表示数据是否删除*/
+    /**
+     * isDelete：表示数据是否删除
+     */
     private String isDelete;
+
+    public String getUserName() {
+        return  userName;
+    }
 }

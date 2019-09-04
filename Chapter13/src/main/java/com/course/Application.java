@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 /**
  * @author wb-fyx220651
  * @date 2018/10/3
- * 启动类
+ * app启动类
  */
 @EnableScheduling
 @SpringBootApplication
