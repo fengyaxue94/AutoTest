@@ -24,6 +24,9 @@ import java.util.Objects;
 @RestController
 @Api(value = "v1",description = "用户管理系统")
 @RequestMapping("v1")
+/**
+ * 用户管理系统V1版本
+ */
 public class UserManager {
     @Autowired
     private SqlSessionTemplate template;

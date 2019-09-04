@@ -3,10 +3,8 @@ package com.course.server;
 import com.course.bean.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-
 import org.springframework.web.bind.annotation.*;
 
-import javax.jws.soap.SOAPBinding;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 @Api(value = "/",description = "这是我全部的post请求")
 @RequestMapping("/v1")
-public class MyPostMethod {
+public class
+MyPostMethod {
 
     /**这个变量是用来装我们cookies信息的*/
     private static Cookie cookie;
